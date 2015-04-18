@@ -3,7 +3,7 @@
 	ng-controller="ActivityController">
   <head>
 	<meta charset="utf-8" />
-	<base href="/emobile/" />
+	<base href="/emobile/activity_main.html" />
 	<title>主题活动</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -27,11 +27,10 @@
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
 	<script src="js/mobile-angular-ui.min.js"></script>
-	
-	
 	<!-- Required to use $swipe, $drag and Translate services -->
-	<script src="js/mobile-angular-ui.gestures.min.js"></script>		 		
-	<script src="js/main.js"></script>		
+	<script src="js/mobile-angular-ui.gestures.min.js"></script>		 			
+	
+	<script src="js/ctrl/activity_ctrl.js"></script>		
 	<style>
 /* 
 		 a:link {color: white}
@@ -42,67 +41,6 @@
 	</style>
   </head>
 <body >
-<div >
-  <span>Scroll</span>
-</div>
-<!-- 
-	<div class="navbar navbar-app navbar-absolute-top">
-		<div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-		  Mobile Angular UI
-		  </div>
-	</div>
- -->
-<div class="scrollable" >
-
-  <div class="scrollable-content" >
-    <div class="list-group">
-      <a ng-repeat="activity in activitys" href="#" class="list-group-item">
-		
-		<span ng-switch on="{{$index}}">
-			<span ng-switch-when=0>					
-			<!-- 第一条 -->		
-				<div style="position:relative;">			
-					<img src="{{ activity.img }}" width=100% height=200px/>				
-					<div style="position:absolute; bottom:10px;text-align:center; width:100%;color:white;">
-						{{activity.title }}
-					</div>
-				</div>
-			</span>
-			<span ng-switch-default>				
-				<table height=100%>
-					<tr>
-						<td><img src="{{ activity.img }}" width="80px" height="80px"/></td>
-						<td>
-							<table border=0 height=100%>
-								<tr>
-									<!--标题-->
-									<td>{{activity.title }}</td>
-								</tr>
-								
-								<tr>									
-									<td height=5px></td>
-								</tr>
-								
-								<tr>
-									<td>{{activity.summary }}</td>
-								</tr>
-								<tr>
-									<td height="100%" valign=bottom>{{activity.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-								</tr>																										
-							</table>
-						</td>
-					</tr>
-				</table>
-			</span>
-		</span>         
-<!--          <i class="fa fa-chevron-right pull-right"></i> -->
-      </a>
-    </div>
-  </div>
-
-
-</div>
-
-	
+<div ng-view></div>
 </body>
 </html>

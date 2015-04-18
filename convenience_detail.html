@@ -1,7 +1,8 @@
 
 	<div class="navbar navbar-app navbar-absolute-top">
 		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;"  >						
-		  	详情		  	
+		  	详情
+		  	
 		  </div>
 		  <div style="position:absolute;height:100%;" ng-click="back()">
 		  		<table height=100%><tr><td style="color:white;">&nbsp;&nbsp;返回</td></tr></table>
@@ -11,11 +12,11 @@
 	<!--内容-->	
 	<div style="position:absolute;top:60px;left:10px;right:10px;">
 		<!--标题-->
-		<div style="font-size:18px;">{{activity.title}}	</div>
+		<div style="font-size:18px;">{{convenience.title}}	</div>
 		<!--时间-->
-		<div style="color:gray;">{{activity.createDate | date:'yyyy-MM-dd HH:mm:ss'}}	</div>
+		<div style="color:gray;">{{convenience.createDate | date:'yyyy-MM-dd HH:mm:ss'}}	</div>
 		<!--内容-->
-		<article ng-bind-html="activity.content | trustHtml"></article>
+		<article ng-bind-html="convenience.content | trustHtml"></article>
 	</div>
 	
 	

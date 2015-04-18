@@ -48,8 +48,8 @@ var app = angular.module('emobile', [
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'home.html', controller:'HomeController', reloadOnSearch: false});
   
-  $routeProvider.when('/toggle',        {templateUrl: 'toggle.html', reloadOnSearch: false}); 
-  $routeProvider.when('/tabs',          {templateUrl: 'tabs.html', reloadOnSearch: false}); 
+  $routeProvider.when('/activity',        {templateUrl: 'activity.html', reloadOnSearch: false}); 
+  $routeProvider.when('/tabs',          {templateUrl: 'convenience.html', reloadOnSearch: false}); 
   $routeProvider.when('/accordion',     {templateUrl: 'accordion.html', reloadOnSearch: false}); 
   $routeProvider.when('/overlay',       {templateUrl: 'overlay.html', reloadOnSearch: false}); 
   $routeProvider.when('/forms',         {templateUrl: 'forms.html', reloadOnSearch: false});
