@@ -1,0 +1,17 @@
+.home_welcom_container{
+height: 250px;	
+}
+.nav_img {
+height: 25px;
+}
+.welcome_img{
+height: 100px;	
+}
+.owl-theme .owl-controls{
+	margin-top: -20px;
+}
+
+
+#owl-demo { width: 100%; height:20px; margin-left: auto; margin-right: auto;}
+#owl-demo .item{ display: block;}
+#owl-demo img { display: block; width: 100%;height:220px;}
