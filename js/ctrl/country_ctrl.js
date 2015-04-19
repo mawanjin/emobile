@@ -31,7 +31,6 @@ app.config(function($routeProvider) {
 app.controller('schoolController', function($rootScope, $scope,$http,$routeParams){
 	$scope.activityId = $routeParams.id;
 	$scope.country = $routeParams.country;
-	alert($routeParams.country);
 	$http.get('/edu/f/edu/school/getByCountryId?id='+$routeParams.id).
 	  success(function(data, status, headers, config) {
 	    $scope.schools = data;
@@ -46,6 +45,24 @@ app.controller('schoolController', function($rootScope, $scope,$http,$routeParam
   $scope.deliberatelyTrustDangerousSnippet = function() {  
 	return $sce.trustAsHtml($scope.snippet);  
   };  
+
+	  
+  $scope.selectgrade = function(type){
+    	if(type==0){
+    		$("#grade").html("中小学");
+    		//更新列表
+	    	$("[grade='0']").show();
+	    	$("[grade='1']").hide();
+    	}else if(type==1){
+	    	$("#grade").html("大学");
+	    	//更新列表
+	    	$("[grade='0']").hide();
+	    	$("[grade='1']").show();	    	
+    	}
+    	
+    	
+    	
+    };
   
   $scope.back = function(){
     	window.history.go(-1);

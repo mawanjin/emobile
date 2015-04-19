@@ -1,0 +1,33 @@
+<div class="navbar navbar-app navbar-absolute-top" style="background-color:green;">
+		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;"  >						
+		  	留言咨询
+		  </div>
+		  <div style="position:absolute;height:100%;width:100%" >
+		  		<table height=100% width="100%" >
+		  			<tr>
+		  				<td style="color:white;" ng-click="back()">&nbsp;&nbsp;返回</td>
+		  				
+		  				<td width="50%" align="right" style="color:green;">
+							<div class="btn-group pull-right">
+							  <a ng-click="postMsg()" class='btn' >
+						    	 提交&nbsp;&nbsp;
+							  </a>							  
+							</div>			  					
+		  				</td>
+		  			</tr>
+		  		</table>
+		  </div>
+	</div>
+	
+	<div style="position:absolute;top:50px;left:10px;right:10px;">
+		<!--标题-->		
+		<div class="form-group has-success has-feedback">
+          <label>标题:</label>
+          <input type="text" ng-model="title" class="form-control ng-pristine ng-valid needsclick ng-valid-email ng-touched required" placeholder="请输入问题标题">
+        </div>		        
+        <!--内容-->		
+		<div class="form-group has-success has-feedback">
+          <label>内容:</label>
+          <textarea  ng-model="content" rows="8" class="form-control ng-pristine ng-valid needsclick ng-valid-email ng-touched" placeholder="请输入问题内容" />
+        </div>		
+	</div>

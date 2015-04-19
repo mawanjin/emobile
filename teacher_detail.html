@@ -1,0 +1,41 @@
+
+	<div class="navbar navbar-app navbar-absolute-top">
+		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;"  >						
+		  	教师详情
+		  </div>
+		  <div style="position:absolute;height:100%;width:100%" >
+		  		<table height=100% width="100%" >
+		  			<tr>
+		  				<td style="color:white;" ng-click="back()">&nbsp;&nbsp;返回</td>
+		  				
+		  				<td width="50%" align="right" style="color:green;">
+							<div class="btn-group pull-right">
+							  <a href="#/msg" class='btn' >
+						    	 留言咨询&nbsp;&nbsp;
+							  </a>							  
+							</div>			  					
+		  				</td>
+		  			</tr>
+		  		</table>
+		  </div>
+	</div>
+	
+	<div style="position:absolute;top:60px;left:10px;right:10px;">
+			<!--图片-->
+			<div><img src="" /></div>
+			<!--内容-->
+			<div>
+				<table width="100%">
+					<tr>
+						<td width="20%"><img src="{{teacher.img}}" /></td>
+						<td>{{teacher.name}}</td>
+					</tr>
+				</table>
+			</div>
+			<hr/>
+		<article ng-bind-html="teacher.content | trustHtml"></article>
+	</div>
+	
+	
+
+ 

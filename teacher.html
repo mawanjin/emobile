@@ -1,6 +1,6 @@
 <div class="navbar navbar-app navbar-absolute-top">
-		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;" ng-click="selectgrade()">
-		  	{{country}}
+		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+		  	名师指导
 		  </div>
 		  <div style="position:absolute;height:100%;width:100%" >
 		  		<table height=100% width="100%" >
@@ -10,43 +10,39 @@
 		  				<td width="50%" align="right" style="color:green;">
 							<div class="btn-group pull-right">
 							  <a ui-turn-on='myDropdown' class='btn' >
-						    	 <i id="grade" class="fa">小学&nbsp;&nbsp;</i>
+						    	 <i id="majorShow" class="fa">专业&nbsp;&nbsp;</i>
 							  </a>
-							  <ul class="dropdown-menu"
+							  <ul id="major" class="dropdown-menu"
 								    ui-outer-click="Ui.turnOff('myDropdown')"
 								    ui-outer-click-if="Ui.active('myDropdown')"
 								    role="menu"
 								    ui-show="myDropdown" 
 								    ui-state="myDropdown"
 								    ui-turn-off="myDropdown"
-								    style="right:10px;">
-							    <li><a ng-click="selectgrade(0)">中小学</a></li>
-							    <li class="divider"></li>
-							    <li><a ng-click="selectgrade(1)">大学</a></li>
+								    style="right:10px;">								    
+							    
 							  </ul>
 							</div>			  					
 		  				</td>
 		  			</tr>
 		  		</table>
 		  </div>
-		  
 </div>
-
-<div class="scrollable" style="top:50px;" >
+<div class="scrollable" style="top:50px;">
 
   <div class="scrollable-content" >
     <div class="list-group">
-      <a ng-repeat="school in schools" href="#/detail/{{ school.id }}/{{ school.name }}" class="list-group-item" >
-		
-			<span grade={{school.grade}}>							
+      <a ng-repeat="teacher in teachers" href="#/detail/{{ teacher.id }}" class="list-group-item" >
+					
+			<span major={{teacher.majorId}}>							
 				<table height=100%>
 					<tr>
-						<td><img src="{{ school.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+						<td><img src="{{ teacher.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
 						<td>
 							<table border=0 height=100%>
 								<tr>
-									<!--学校名称-->
-									<td>{{school.name }}</td>
+									<!--名称-->
+									<td>{{teacher.name }}</td>
 								</tr>
 								
 								<tr>									
@@ -54,15 +50,13 @@
 								</tr>
 								
 								<tr>
-									<td>{{school.summary }}</td>
-								</tr>
+									<td>{{teacher.summary }}</td>
+								</tr>																																	
 							</table>
 						</td>
 					</tr>
 				</table>
 			</span>
-       
-
       </a>
     </div>
   </div>
