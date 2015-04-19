@@ -1,6 +1,6 @@
 <div class="navbar navbar-app navbar-absolute-top">
 		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-		  	国家列表
+		  	选择名校所在国
 		  </div>
 		  <div style="position:absolute;height:100%;" ng-click="back()">
 		  		<table height=100%><tr><td style="color:white;">&nbsp;&nbsp;返回</td></tr></table>
@@ -12,7 +12,7 @@
 
   <div class="scrollable-content" >
     <div class="list-group">
-      <a ng-repeat="country in countrys" href="#/detail/{{ country.id }}" class="list-group-item" >		
+      <a ng-repeat="country in countrys" href="#/school/{{ country.id }}/{{ country.name }}" class="list-group-item" >		
 
 			<div>					
 				<table width="100%" border="0" >

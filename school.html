@@ -1,37 +1,33 @@
 <div class="navbar navbar-app navbar-absolute-top">
 		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-		  	主题活动
+		  	{{country}}
 		  </div>
-		  <div style="position:absolute;height:100%;" ng-click="back()">
-		  		<table height=100%><tr><td style="color:white;">&nbsp;&nbsp;返回</td></tr></table>
+		  <div style="position:absolute;height:100%;width:100%" ng-click="back()">
+		  		<table height=100% width="100%" >
+		  			<tr>
+		  				<td style="color:white;">&nbsp;&nbsp;返回</td>
+		  				<td width="50%" align="right" style="color:green;">小学&nbsp;&nbsp;</td>
+		  			</tr>
+		  		</table>
 		  </div>
+		  
 </div>
-<div class="scrollable" >
+
+<div class="scrollable" style="top:50px;" >
 
   <div class="scrollable-content" >
     <div class="list-group">
-      <a ng-repeat="activity in activitys" href="#/detail/{{ activity.id }}" class="list-group-item" >
+      <a ng-repeat="school in schools" href="#/detail/{{ school.id }}/{{ school.name }}" class="list-group-item" >
 		
-		<span ng-switch on="{{$index}}">
-			<span ng-switch-when=0>					
-			<!-- 第一条 -->		
-				<div style="position:relative;">			
-					<img src="{{ activity.img }}" width=100% height=200px/>				
-					<div style="position:absolute; bottom:10px;text-align:center; width:100%;color:white;">
-						{{activity.title }}
-					</div>
-				</div>
-			</span>
-			<span ng-switch-default>							
-
+			<span>							
 				<table height=100%>
 					<tr>
-						<td><img src="{{ activity.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+						<td><img src="{{ school.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
 						<td>
 							<table border=0 height=100%>
 								<tr>
-									<!--标题-->
-									<td>{{activity.title }}</td>
+									<!--学校名称-->
+									<td>{{school.name }}</td>
 								</tr>
 								
 								<tr>									
@@ -39,17 +35,14 @@
 								</tr>
 								
 								<tr>
-									<td>{{activity.summary }}</td>
+									<td>{{school.summary }}</td>
 								</tr>
-								<tr>
-									<td height="100%" valign=bottom>{{activity.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-								</tr>																										
 							</table>
 						</td>
 					</tr>
 				</table>
 			</span>
-		</span>         
+       
 
       </a>
     </div>

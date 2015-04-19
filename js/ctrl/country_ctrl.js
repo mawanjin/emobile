@@ -23,15 +23,43 @@ app.filter('trustHtml', function ($sce) {
 // 
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'country.html', controller:'countryController', reloadOnSearch: false});  
-  $routeProvider.when('/detail/:id',        {templateUrl: 'activity_detail.html',controller:'detailController', reloadOnSearch: false});   
+  $routeProvider.when('/school/:id/:country',        {templateUrl: 'school.html',controller:'schoolController', reloadOnSearch: false});   
+    $routeProvider.when('/detail/:id/:name',        {templateUrl: 'school_detail.html',controller:'detailController', reloadOnSearch: false});   
 });
 
-app.controller('detailController', function($rootScope, $scope,$http,$routeParams){
-	$scope.activityId = $routeParams.id;
 
-	$http.get('/edu/f/edu/country/get?id='+$routeParams.id).
+app.controller('schoolController', function($rootScope, $scope,$http,$routeParams){
+	$scope.activityId = $routeParams.id;
+	$scope.country = $routeParams.country;
+	alert($routeParams.country);
+	$http.get('/edu/f/edu/school/getByCountryId?id='+$routeParams.id).
 	  success(function(data, status, headers, config) {
-	    $scope.country = data;
+	    $scope.schools = data;
+	    
+  }).
+  error(function(data, status, headers, config) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+	
+  });    
+  
+  $scope.deliberatelyTrustDangerousSnippet = function() {  
+	return $sce.trustAsHtml($scope.snippet);  
+  };  
+  
+  $scope.back = function(){
+    	window.history.go(-1);
+    };
+
+});
+
+
+app.controller('detailController', function($rootScope, $scope,$http,$routeParams){
+
+	$scope.activityId = $routeParams.id;
+	$http.get('/edu/f/edu/school/get?id='+$routeParams.id).
+	  success(function(data, status, headers, config) {
+	    $scope.school = data;
 	    
   }).
   error(function(data, status, headers, config) {
