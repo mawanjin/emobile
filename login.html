@@ -1,31 +1,38 @@
 <!--顶部图片-->
-<div style="height:100px;">
-	<img src="xx" alt="留学1+1" />	
+<div >
+	<img src="imgs/login_top.png" alt="留学1+1" width="100%" height="250px" />	
 </div>
 
 
 <!--表单-->
-<div style="margin:30px 30px;">
+<div style="margin:70px 30px;">
 <form role="form" ng-submit='login()'>
 	<fieldset>
 	  
 		<div class="form-group  input-prepend">		  
+			<div style="position:absolute;height:34px;line-height:34px;">
+				&nbsp;&nbsp;<img src="imgs/add_account.png" width="20px;" height="20px;" />&nbsp;&nbsp;|
+			</div>
 		  <input type="email"
 				 ng-model="email"
 				 class="form-control"
+				 style="padding-left:45px;"
 				 placeholder="请输入帐号">
 		</div>
 
 		<div class="form-group">
-		  
+		  <div style="position:absolute;height:34px;line-height:34px;">
+		  	&nbsp;&nbsp;<img src="imgs/add_password.png" width="20px;" height="20px;" />&nbsp;&nbsp;|
+		  </div>
 		  <input type="password" 
 				 class="form-control"
+				 style="padding-left:45px;"
 				 placeholder="请输入密码">
 		</div>		
 		
 	</fieldset>
 
-	<button class="btn btn-primary btn-block" style="margin-top:20px;">
+	<button class="btn btn-success btn-block" style="margin-top:20px;">
 	  登陆
 	</button>
 
@@ -37,7 +44,7 @@
 	  <table width="100%">
 		<tr>
 			<td align="center">
-				<button class="btn btn-large btn-block "  type="button" style="width:200px;" ><a href="#/register">注册帐号</a></button>
+				<button class="btn btn-large btn-block " type="button" style="width:200px;" ><a href="#/register">注册帐号</a></button>
 			</td>
 		</tr>
 	  </table>
