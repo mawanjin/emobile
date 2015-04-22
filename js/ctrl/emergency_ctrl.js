@@ -58,6 +58,9 @@ app.controller('emergencyController', function($rootScope, $scope,$http){
     	// this callback will be called asynchronously
 	    // when the response is available			
 	    $scope.emergencys = data;
+          if(data.type==0){
+
+          }
 	    
   }).
   error(function(data, status, headers, config) {

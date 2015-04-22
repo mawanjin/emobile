@@ -48,7 +48,7 @@ var app = angular.module('emobile', [
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'home.html', controller:'HomeController', reloadOnSearch: false});
   $routeProvider.when('/personal',              {templateUrl: 'personal.html', controller:'personalController', reloadOnSearch: false});
-  $routeProvider.when('/setting',              {templateUrl: 'setting.html', controller:'personalController', reloadOnSearch: false});
+  $routeProvider.when('/setting',              {templateUrl: 'setting.html', controller:'settingController', reloadOnSearch: false});
 });
 
 //
@@ -200,6 +200,11 @@ app.controller('HomeController', function($rootScope, $scope,$location){
 });
 
 app.controller('personalController', function($rootScope, $scope){
+
+  $("#tab_personal img").attr('src','imgs/mine_selected.png');
+  $("#tab_index img").attr('src','imgs/index.png');
+  $("#tab_setting img").attr('src','imgs/setting.png');
+
   $('#owl-demo').owlCarousel({
     items: 1,
     autoPlay: true
@@ -208,8 +213,103 @@ app.controller('personalController', function($rootScope, $scope){
   //图片点击效果,及跳转事件
   //个人中心
 
-  $("#home_menu_first").on('mousedown',function(){
-    $("#home_menu_first").attr('src','imgs/menu_personal_pressed.png');
+  $("#home_menu_personal").on('mousedown',function(){
+    $("#home_menu_personal img").attr('src','imgs/menu_personal_pressed.png');
+
+  });
+
+  $("#home_menu_first").on('mouseup',function(){
+    $("#home_menu_first").attr('src','imgs/menu_personal.png');
+  });
+  //主题活动
+  $("#home_menu_activity").on('mousedown',function(){
+    $("#home_menu_activity").attr('src','imgs/menu_activity_pressed.png');
+  });
+
+  $("#home_menu_activity").on('mouseup',function(){
+    $("#home_menu_activity").attr('src','imgs/menu_activity.png');
+  });
+  //海外之家
+  $("#home_menu_aboard").on('mousedown',function(){
+    $("#home_menu_aboard").attr('src','imgs/menu_aboard_pressed.png');
+  });
+
+  $("#home_menu_aboard").on('mouseup',function(){
+    $("#home_menu_aboard").attr('src','imgs/menu_aboard.png');
+  });
+  //名题指导
+  $("#home_menu_teacher").on('mousedown',function(){
+    $("#home_menu_teacher").attr('src','imgs/menu_teacher_pressed.png');
+  });
+
+  $("#home_menu_teacher").on('mouseup',function(){
+    $("#home_menu_teacher").attr('src','imgs/menu_teacher.png');
+  });
+  //重要提示
+  $("#home_menu_emergency").on('mousedown',function(){
+    $("#home_menu_emergency").attr('src','imgs/menu_emergency_pressed.png');
+  });
+
+  $("#home_menu_emergency").on('mouseup',function(){
+    $("#home_menu_emergency").attr('src','imgs/menu_emergency.png');
+  });
+  //名校推荐
+  $("#home_menu_school").on('mousedown',function(){
+    $("#home_menu_school").attr('src','imgs/menu_school_pressed.png');
+  });
+
+  $("#home_menu_school").on('mouseup',function(){
+    $("#home_menu_school").attr('src','imgs/menu_school.png');
+  });
+  //生活便利
+  $("#home_menu_convenience").on('mousedown',function(){
+    $("#home_menu_convenience").attr('src','imgs/menu_convenience_pressed.png');
+  });
+
+  $("#home_menu_convenience").on('mouseup',function(){
+    $("#home_menu_convenience").attr('src','imgs/menu_convenience.png');
+  });
+  //gps
+  $("#home_menu_gps").on('mousedown',function(){
+    $("#home_menu_gps").attr('src','imgs/menu_gps_pressed.png');
+  });
+
+  $("#home_menu_gps").on('mouseup',function(){
+    $("#home_menu_gps").attr('src','imgs/menu_gps.png');
+  });
+  //联系我们
+  $("#home_menu_contact").on('mousedown',function(){
+    $("#home_menu_contact").attr('src','imgs/menu_contact_us_pressed.png');
+  });
+
+  $("#home_menu_contact").on('mouseup',function(){
+    $("#home_menu_contact").attr('src','imgs/menu_contact_us.png');
+  });
+
+
+
+
+
+});
+
+
+app.controller('settingController', function($rootScope, $scope){
+
+  $("#tab_personal img").attr('src','imgs/mine.png');
+  $("#tab_index img").attr('src','imgs/index.png');
+  $("#tab_setting img").attr('src','imgs/setting_selected.png');
+
+  $('#owl-demo').owlCarousel({
+    items: 1,
+    autoPlay: true
+  });
+
+  //图片点击效果,及跳转事件
+  //个人中心
+
+  $("#home_menu_personal").on('mousedown',function(){
+    $("#home_menu_personal img").attr('src','imgs/menu_personal_pressed.png');
+
   });
 
   $("#home_menu_first").on('mouseup',function(){
@@ -310,7 +410,6 @@ var scrollItems = [];
 	
   });
 });
-
 
 //
 // For this trivial demo we have just a unique MainController 

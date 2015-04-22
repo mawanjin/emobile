@@ -1,16 +1,22 @@
-<div class="navbar navbar-app navbar-absolute-top">
+<div class="navbar navbar-app navbar-absolute-top edu_title">
 		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;" ng-click="selectgrade()">
 		  	{{country}}
 		  </div>
 		  <div style="position:absolute;height:100%;width:100%" >
 		  		<table height=100% width="100%" >
 		  			<tr>
-		  				<td style="color:white;" ng-click="back()">&nbsp;&nbsp;返回</td>
+		  				<td style="color:white;padding-left: 20px;" align="left" ng-click="back()">
+							<img src="imgs/back.png" class="back_arrow" />
+						</td>
 		  				
 		  				<td width="50%" align="right" style="color:green;">
 							<div class="btn-group pull-right">
 							  <a ui-turn-on='myDropdown' class='btn' >
-						    	 <i id="grade" class="fa">小学&nbsp;&nbsp;</i>
+						    	 <i  class="fa">
+									 <div id="grade" style="border: 1px solid #ffffff;height: 30px;width: 80px;line-height: 30px;color: #ffffff;">
+										 中小学
+									 </div>
+								 </i>
 							  </a>
 							  <ul class="dropdown-menu"
 								    ui-outer-click="Ui.turnOff('myDropdown')"
@@ -32,7 +38,7 @@
 		  
 </div>
 
-<div class="scrollable" style="top:50px;" >
+<div class="scrollable" style="position: absolute;padding-top:50px;" >
 
   <div class="scrollable-content" >
     <div class="list-group">

@@ -2,4 +2,24 @@
 height: 25px;
 }
 
+
+#owl-demo { width: 100%;  margin-left: auto; margin-right: auto;}
+#owl-demo .item{ display: block;}
 #owl-demo img { display: block; width: 100%;height:380px;}
+#home_menu_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:120px;
+    background-image: url("../imgs/home_bg.png");
+}
+
+.home_menu_img{
+    width:90px;
+    height:90px;
+}
+
+#home_menu_first{
+    width:181px;
+    height:181px;
+}

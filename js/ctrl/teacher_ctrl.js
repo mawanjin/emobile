@@ -32,6 +32,10 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
 	$http.get('/edu/f/edu/teacher/get?id='+$routeParams.id).
 	  success(function(data, status, headers, config) {
 	    $scope.teacher = data;
+		if(data.gendar==1){
+			$("#imgGendar").attr('src','imgs/icon_male.png');
+			$("#teacherIcon").attr('src','imgs/nan.png');
+		}
 	    
   }).
   error(function(data, status, headers, config) {
@@ -112,11 +116,10 @@ app.controller('teacherController', function($rootScope, $scope,$http){
 	    $scope.majors = data;
 	    var c ="";
 	    for(i=0;i<data.length;i++){
-	    	c+="<li><a onClick=\"filterMajor('"+data[i].id+"')\">"+data[i].name+"</a></li>";
+	    	c+="<li><a onClick=\"filterMajor('"+data[i].id+"','"+data[i].name+"')\">"+data[i].name+"</a></li>";
 	    	if(i!=data.length-1)c+="<li class='divider'></li>";
 	    }
 	    $("#major").html(c);
-	    
 	    $("#majorShow").html(data[0].name);	    
 	    
   }).
@@ -129,9 +132,10 @@ app.controller('teacherController', function($rootScope, $scope,$http){
   
 });
 
-function filterMajor(id){	
+function filterMajor(id,name){
     //更新列表
     $("[major]").parent().hide();
 	$("[major='"+id+"']").parent().show();
+	$("#majorShow").html(name);
 }
 

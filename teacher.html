@@ -1,65 +1,68 @@
-<div class="navbar navbar-app navbar-absolute-top">
-		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-		  	名师指导
-		  </div>
-		  <div style="position:absolute;height:100%;width:100%" >
-		  		<table height=100% width="100%" >
-		  			<tr>
-		  				<td style="color:white;" ng-click="back()">&nbsp;&nbsp;返回</td>
-		  				
-		  				<td width="50%" align="right" style="color:green;">
-							<div class="btn-group pull-right">
-							  <a ui-turn-on='myDropdown' class='btn' >
-						    	 <i id="majorShow" class="fa">专业&nbsp;&nbsp;</i>
-							  </a>
-							  <ul id="major" class="dropdown-menu"
-								    ui-outer-click="Ui.turnOff('myDropdown')"
-								    ui-outer-click-if="Ui.active('myDropdown')"
-								    role="menu"
-								    ui-show="myDropdown" 
-								    ui-state="myDropdown"
-								    ui-turn-off="myDropdown"
-								    style="right:10px;">								    
-							    
-							  </ul>
-							</div>			  					
-		  				</td>
-		  			</tr>
-		  		</table>
-		  </div>
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        名师指导
+    </div>
+    <div style="position:absolute;height:100%;width:100%">
+        <table height=100% width="100%">
+            <tr>
+                <td style="color:white;padding-left: 20px;" ng-click="back()" align="left" ><img src="imgs/back.png" class="back_arrow" /></td>
+
+                <td width="50%" align="right" style="color:green;">
+                    <div class="btn-group pull-right">
+                        <a ui-turn-on='myDropdown' class='btn'>
+                            <i  class="fa">
+                                <div id="majorShow" style="border: 1px solid #ffffff;height: 30px;width: 80px;line-height: 30px;color: #ffffff;">
+                                </div>
+                            </i>
+                        </a>
+                        <ul id="major" class="dropdown-menu"
+                            ui-outer-click="Ui.turnOff('myDropdown')"
+                            ui-outer-click-if="Ui.active('myDropdown')"
+                            role="menu"
+                            ui-show="myDropdown"
+                            ui-state="myDropdown"
+                            ui-turn-off="myDropdown"
+                            style="right:10px;">
+
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
 <div class="scrollable" style="top:50px;">
 
-  <div class="scrollable-content" >
-    <div class="list-group">
-      <a ng-repeat="teacher in teachers" href="#/detail/{{ teacher.id }}" class="list-group-item" >
+    <div class="scrollable-content">
+        <div class="list-group">
+            <a ng-repeat="teacher in teachers" href="#/detail/{{ teacher.id }}" class="list-group-item">
 					
 			<span major={{teacher.majorId}}>							
 				<table height=100%>
-					<tr>
-						<td><img src="{{ teacher.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
-						<td>
-							<table border=0 height=100%>
-								<tr>
-									<!--名称-->
-									<td>{{teacher.name }}</td>
-								</tr>
-								
-								<tr>									
-									<td height=5px></td>
-								</tr>
-								
-								<tr>
-									<td>{{teacher.summary }}</td>
-								</tr>																																	
-							</table>
-						</td>
-					</tr>
-				</table>
+                    <tr>
+                        <td><img src="{{ teacher.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+                        <td>
+                            <table border=0 height=100%>
+                                <tr>
+                                    <!--名称-->
+                                    <td>{{teacher.name }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td height=5px></td>
+                                </tr>
+
+                                <tr>
+                                    <td>{{teacher.summary }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 			</span>
-      </a>
+            </a>
+        </div>
     </div>
-  </div>
 
 
 </div>

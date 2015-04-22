@@ -1,43 +1,51 @@
-<div class="navbar navbar-app navbar-absolute-top">
-		<div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-		  	重要提示
-		  </div>
-		  <div style="position:absolute;height:100%;" ng-click="back()">
-		  		<table height=100%><tr><td style="color:white;">&nbsp;&nbsp;返回</td></tr></table>
-		  </div>
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        重要提示
+    </div>
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
+            <tr>
+                <td style="color:white;">
+					<img src="imgs/back.png" class="back_arrow" />
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-<div class="scrollable" >
+<div class="scrollable">
 
-  <div class="scrollable-content" >
-    <div class="list-group">
-      <a ng-repeat="emergency in emergencys" href="#/detail/{{ emergency.id }}" class="list-group-item" >
+    <div class="scrollable-content">
+        <div class="list-group">
+            <a ng-repeat="emergency in emergencys" href="#/detail/{{ emergency.id }}" class="list-group-item">
 		
 		<span ng-switch on="{{$index}}">
 			<span ng-switch-when=0>					
 			<!-- 第一条 -->		
-				<div style="position:relative;">			
-					<img src="{{ emergency.img }}" width=100% height=200px/>				
-				</div>
+				<div style="position:relative;">
+                    <img src="{{ emergency.img }}" width=100% height=200px/>
+                </div>
 			</span>
 			<span ng-switch-default>							
 				<table width=100% border=0 height=100%>
-					<tr>
-						<!--类型图片-->
-						<td>{{emergency.type }}</td>
-						<td width=80% height="100%" align="right">{{emergency.createDate | date:'yyyy-MM-dd HH:mm:ss'}}&nbsp;</td>
-					</tr>
-							
-					<tr>
-						<!--标题-->
-						<td cols="2">{{emergency.title }}</td>									
-					</tr>																										
-				</table>
+                    <tr>
+                        <!--类型图片-->
+                        <td><img id="etype" src="imgs/icon_important.png" /></td>
+                        <td width=75% height="100%" align="right" style="color: #666;">{{emergency.createDate | date:'yyyy-MM-dd HH:mm:ss'}}&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" height="5px;"></td>
+                    </tr>
+                    <tr>
+                        <!--标题-->
+                        <td colspan="2">{{emergency.title }}</td>
+                    </tr>
+                </table>
 			</span>
-		</span>         
+		</span>
 
-      </a>
+            </a>
+        </div>
     </div>
-  </div>
 
 
 </div>

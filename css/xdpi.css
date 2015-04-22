@@ -23,15 +23,21 @@ height: 100px;
 }
 
 .home_menu_img{
-	width:90px;
-	height:90px;
+	width:70px;
+	height:70px;
 }
 
 #home_menu_first{
-	width:181px;
-	height:181px;
+	width:141px;
+	height:141px;
 }
 
-#home_menu_first:active{
+.personal_menu_img{
+	width:101px;
+	height:101px;
+}
 
+.back_arrow{
+	width:16px;
+	height:20px;
 }
