@@ -29,6 +29,7 @@ mApp.config(function($routeProvider) {
 var app = angular.module('emobile', [
   'ngRoute',
   'mobile-angular-ui',
+   'ngCookies',
   // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'
   // it is at a very beginning stage, so please be careful if you like to use
   // in production. This is intended to provide a flexible, integrated and and 
@@ -97,7 +98,8 @@ app.directive('dragToDismiss', function($drag, $parse, $timeout){
 });
 
 
-app.controller('HomeController', function($rootScope, $scope,$location){
+app.controller('HomeController', function($rootScope, $scope,$location,$cookieStore){
+  $cookieStore.put("name","my name");
 
   $("#tab_personal").on('click',function(){
     $("#tab_personal img").attr('src','imgs/mine_selected.png');
@@ -135,12 +137,12 @@ app.controller('HomeController', function($rootScope, $scope,$location){
     $("#home_menu_activity").attr('src','imgs/menu_activity.png');
   });
   //海外之家
-  $("#home_menu_aboard").on('mousedown',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard_pressed.png');
+  $("#home_menu_abroad").on('mousedown',function(){
+    $("#home_menu_abroad").attr('src','imgs/menu_aboard_pressed.png');
   });
 
-  $("#home_menu_aboard").on('mouseup',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard.png');
+  $("#home_menu_abroad").on('mouseup',function(){
+    $("#home_menu_abroad").attr('src','imgs/menu_aboard.png');
   });
   //名题指导
   $("#home_menu_teacher").on('mousedown',function(){

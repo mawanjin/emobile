@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/imgs/aboutus.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/back.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_female.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_important.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_male.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_abroad.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_activity.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_convenience.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_emergency.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_personal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_setting.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_teacher_detail.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logout.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_aboard.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/nan.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/nv.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/angular-cookies.min.js" charset="UTF-8" />
+  </component>
+</project>

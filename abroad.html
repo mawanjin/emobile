@@ -1,36 +1,33 @@
 <div class="navbar navbar-app navbar-absolute-top edu_title">
     <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-        生活便利
+        海外之家
     </div>
     <div style="position:absolute;height:100%;" ng-click="back()">
         <table height=100%>
             <tr>
-                <td style="color:white;padding-left: 20px;" align="left">
-					<img src="imgs/back.png" class="back_arrow" />
+                <td style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
                 </td>
             </tr>
         </table>
     </div>
-
 </div>
-
-
 <div class="scrollable">
 
     <div class="scrollable-content">
-        <div><img src="imgs/logo_convenience.png" width="100%"  /></div>
+        <div><img src="imgs/logo_abroad.png" width="100%"  /></div>
+
         <div class="list-group">
-            <a ng-repeat="convenience in conveniences" href="#/detail/{{ convenience.id }}" class="list-group-item">
+            <a ng-repeat="abroad in abroads" href="#/detail/{{ abroad.id }}" class="list-group-item">
 		
-		<span>
 				<table height=100%>
                     <tr>
-                        <td><img src="{{ convenience.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+                        <td><img src="{{ abroad.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
                         <td>
                             <table border=0 height=100%>
                                 <tr>
                                     <!--标题-->
-                                    <td>{{convenience.title }}</td>
+                                    <td>{{abroad.title }}</td>
                                 </tr>
 
                                 <tr>
@@ -38,10 +35,10 @@
                                 </tr>
 
                                 <tr>
-                                    <td>{{convenience.summary }}</td>
+                                    <td>{{abroad.summary }}</td>
                                 </tr>
                                 <tr>
-                                    <td height="100%" valign=bottom>{{convenience.createDate | date:'yyyy-MM-dd
+                                    <td height="100%" valign=bottom>{{abroad.createDate | date:'yyyy-MM-dd
                                         HH:mm:ss'}}
                                     </td>
                                 </tr>
@@ -49,8 +46,6 @@
                         </td>
                     </tr>
                 </table>
-			</span>
-		</span>
 
             </a>
         </div>
