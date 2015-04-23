@@ -29,8 +29,6 @@ mApp.config(function($routeProvider) {
 var app = angular.module('emobile', [
   'ngRoute',
   'mobile-angular-ui',
-  
-  
   // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'
   // it is at a very beginning stage, so please be careful if you like to use
   // in production. This is intended to provide a flexible, integrated and and 
@@ -46,7 +44,7 @@ var app = angular.module('emobile', [
 // in order to avoid unwanted routing.
 // 
 app.config(function($routeProvider) {
-  $routeProvider.when('/',              {templateUrl: 'home.html', controller:'HomeController', reloadOnSearch: false});
+  $routeProvider.when('/home',              {templateUrl: 'home.html', controller:'HomeController', reloadOnSearch: false});
   $routeProvider.when('/personal',              {templateUrl: 'personal.html', controller:'personalController', reloadOnSearch: false});
   $routeProvider.when('/setting',              {templateUrl: 'setting.html', controller:'settingController', reloadOnSearch: false});
 });
@@ -192,10 +190,6 @@ app.controller('HomeController', function($rootScope, $scope,$location){
   $("#home_menu_contact").on('mouseup',function(){
     $("#home_menu_contact").attr('src','imgs/menu_contact_us.png');
   });
-
-
-
-
 
 });
 

@@ -1,0 +1,46 @@
+
+.nav_img {
+height: 5px;
+}
+.nav_menu_font{
+	font-size: 15px;
+}
+.welcome_img{
+height: 100px;	
+}
+.owl-theme .owl-controls{
+	margin-top: -20px;
+}
+
+
+#owl-demo { width: 100%;  margin-left: auto; margin-right: auto;}
+#owl-demo .item{ display: block;}
+#owl-demo img { display: block; width: 100%;height:180px;}
+
+#home_menu_container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:180px;
+	background-image: url("../imgs/home_bg.png");
+}
+
+.home_menu_img{
+	width:60px;
+	height:60px;
+}
+
+#home_menu_first{
+	width:121px;
+	height:121px;
+}
+
+.personal_menu_img{
+	width:91px;
+	height:91px;
+}
+
+.back_arrow{
+	width:16px;
+	height:20px;
+}
