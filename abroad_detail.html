@@ -1,5 +1,5 @@
 <div class="navbar navbar-app navbar-absolute-top edu_title">
-    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;" ui-turn-on="modal1">
         详情
     </div>
     <div style="position:absolute;width: 100%;height:100%;" >
@@ -9,8 +9,7 @@
                     <img src="imgs/back.png" class="back_arrow" ng-click="back()"/>
                 </td>
                 <td align="right">
-                    <div style="border: 1px solid #ffffff;height: 30px;width: 85px;line-height: 30px;color: #ffffff;margin-right: 20px;text-align: center;"  ng-click="enroll()">
-                        <!--ui-turn-on="modal1"-->
+                    <div id="enrollContainer" style="border: 1px solid #ffffff;height: 30px;width: 85px;line-height: 30px;color: #ffffff;margin-right: 20px;text-align: center;" ng-click="enroll()"  >
                         我要报名
                     </div>
 
@@ -23,20 +22,19 @@
 
 </div>
 
-
 <!--内容-->
 <div style="position:absolute;top:60px;left:10px;right:10px;">
     <!--标题-->
-    <div style="font-size:18px;">{{abroad.title}}</div>
+    <div style="font-size:18px;" >{{abroad.title}}</div>
     <!--时间-->
-    <div style="color:gray;">{{abroad.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+    <div style="color:gray;" >{{abroad.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
 
 </div>
 
 
 <div class="scrollable" style="padding-top: 110px;">
 
-    <div class="scrollable-content" style="padding-left: 10px;padding-right: 10px;">
+    <div class="scrollable-content" style="padding-left: 10px;padding-right: 10px;" >
         <!--内容-->
         <article ng-bind-html="abroad.content | trustHtml"></article>
     </div>
@@ -44,9 +42,9 @@
 
 
 <!--报名弹出窗口-->
-<div ui-yield-to="modals" style="top: 50px;"></div>
-<div ui-content-for="modals" >
-    <div class="modal" ui-if="modal1" ui-state='modal1'>
+<div  ui-yield-to="modals" style="top: 50px;"></div>
+<div id="dialog_enroll_success" ui-content-for="modals"  >
+    <div class="modal">
         <div class="modal-backdrop in"></div>
         <div class="modal-dialog">
             <div class="modal-content">
@@ -61,7 +59,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button ui-turn-off="modal1" class="btn btn-default">确定</button>
+                    <button  class="btn btn-default" ng-click="closeEnrollDialog()">  确定</button>
                 </div>
             </div>
         </div>
