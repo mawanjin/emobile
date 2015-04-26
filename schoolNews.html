@@ -1,0 +1,57 @@
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        {{schoolName}}
+    </div>
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
+            <tr>
+                <td style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="scrollable">
+
+    <div class="scrollable-content">
+        <div><img src="imgs/logo_schoolNew.png" width="100%"  /></div>
+
+        <div class="list-group">
+            <a ng-repeat="schoolNews in schoolNewses" href="#/detail/{{ schoolNews.id }}" class="list-group-item">
+		
+				<table height=100%>
+                    <tr>
+                        <td><img src="{{ schoolNews.img }}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+                        <td>
+                            <table border=0 height=100%>
+                                <tr>
+                                    <!--标题-->
+                                    <td>{{schoolNews.title }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td height=5px></td>
+                                </tr>
+
+                                <tr>
+                                    <td>{{schoolNews.summary }}</td>
+                                </tr>
+                                <tr>
+                                    <td height="100%" valign=bottom>{{schoolNews.createDate | date:'yyyy-MM-dd
+                                        HH:mm:ss'}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+	

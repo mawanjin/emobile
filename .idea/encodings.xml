@@ -10,7 +10,9 @@
     <file url="file://$PROJECT_DIR$/imgs/logo_activity.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_convenience.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_emergency.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_guardian.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_personal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_schoolNew.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_setting.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_teacher_detail.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logout.png" charset="UTF-8" />
@@ -18,5 +20,6 @@
     <file url="file://$PROJECT_DIR$/imgs/nan.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/nv.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/angular-cookies.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/js.cookie.js" charset="UTF-8" />
   </component>
 </project>

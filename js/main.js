@@ -36,7 +36,8 @@ var app = angular.module('emobile', [
   // easy to use alternative to other 3rd party libs like hammer.js, with the
   // final pourpose to integrate gestures into default ui interactions like 
   // opening sidebars, turning switches on/off ..
-  'mobile-angular-ui.gestures'
+  'mobile-angular-ui.gestures',
+  'ngCookies'
 ]);
 
 // 
@@ -99,7 +100,7 @@ app.directive('dragToDismiss', function($drag, $parse, $timeout){
 
 
 app.controller('HomeController', function($rootScope, $scope,$location,$cookieStore){
-  $cookieStore.put("name","my name");
+
 
   $("#tab_personal").on('click',function(){
     $("#tab_personal img").attr('src','imgs/mine_selected.png');
@@ -289,7 +290,7 @@ app.controller('personalController', function($rootScope, $scope){
 });
 
 
-app.controller('settingController', function($rootScope, $scope){
+app.controller('settingController', function($rootScope, $scope,$cookieStore,$location){
 
   $("#tab_personal img").attr('src','imgs/mine.png');
   $("#tab_index img").attr('src','imgs/index.png');
@@ -377,7 +378,10 @@ app.controller('settingController', function($rootScope, $scope){
   });
 
 
-
+  $scope.logout = function(){
+    Cookies.remove('login',{ path: '/' });
+    $location.path("/home");
+  };
 
 
 });

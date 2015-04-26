@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
 });
 
 app.controller('detailController', function($rootScope, $scope,$http,$routeParams,$cookieStore,$location){
-
+    Cookies.json = true;
     $scope.$watch('$viewContentLoaded', function() {
         $(".modal").hide();
     });
@@ -39,9 +39,20 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
     };
 
 	$scope.abroadId = $routeParams.id;
-    if($cookieStore.get("login")==true){
-      $scope.user = $cookieStore.get("user");
+
+
+
+    if(Cookies.get("login")==true){
+      $scope.user = Cookies.get("user");
+    }else{
+        $scope.user = undefined;
     }
+
+    //if($cookieStore.get("login")==true){
+    //  $scope.user = $cookieStore.get("user");
+    //}else{
+    //    $scope.user = undefined;
+    //}
 
     //网络请求数据
     var url = "/edu/f/edu/abroad/get?abroadhome="+$routeParams.id;
@@ -61,8 +72,8 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
 
   $scope.enroll = function(){
 
-    if($cookieStore.get("login")==true){//进行报名操作
-      $scope.user = $cookieStore.get("user");
+    if(Cookies.get("login")==true){//进行报名操作
+      $scope.user = Cookies.get("user");
 
       $http.get('/edu/f/edu/abroad/enroll/save?userId='+$scope.user.id+'&abroadId='+$scope.abroadId).
           success(function(data, status, headers, config) {
@@ -105,13 +116,16 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
             $scope.login_rs = data;
             if($scope.login_rs.rs==true){
               //存储用户信息
-              $cookieStore.put("login",true);
-              $cookieStore.put("user",$scope.login_rs.euser);
+              Cookies.set('login', true, { path: '/'});
+              //$cookieStore.put("login",true);
+              //$cookieStore.put("user",$scope.login_rs.euser);
+                Cookies.set('guardian', $scope.login_rs.guardian, { path: '/'});
+                Cookies.set('user', $scope.login_rs.euser, { path: '/'});
               window.history.back();
 
             }else{
               alert("用户名或密码错误");
-              $cookieStore.put("login",false);
+                Cookies.put("login",false);
             }
 
           }).
