@@ -1,6 +1,6 @@
 <div class="navbar navbar-app navbar-absolute-top edu_title">
     <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-        详情
+        监护人报告
     </div>
     <div style="position:absolute;height:100%;" ng-click="back()">
         <table height=100%>
@@ -17,9 +17,9 @@
 <!--内容-->
 <div style="position:absolute;top:60px;left:10px;right:10px;">
     <!--标题-->
-    <div style="font-size:18px;">{{activity.title}}</div>
+    <div style="font-size:18px;">{{report.title}}</div>
     <!--时间-->
-    <div style="color:gray;">{{activity.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+    <div style="color:gray;">{{report.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
 
 </div>
 
@@ -28,7 +28,7 @@
 
     <div class="scrollable-content">
         <!--内容-->
-        <article ng-bind-html="activity.content | trustHtml"></article>
+        <article ng-bind-html="report.content | trustHtml"></article>
     </div>
 </div>
 	

@@ -1,47 +1,28 @@
 <div class="navbar navbar-app navbar-absolute-top edu_title">
     <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
-        监护人
+        报告列表
     </div>
-    <div style="position:absolute;height:100%;width:100%">
-        <table height=100% width="100%">
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
             <tr>
-                <td style="color:white;padding-left: 10px;" align="left" ng-click="back()">
-                    <img src="imgs/back.png" class="back_arrow"/>
+                <td style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
                 </td>
             </tr>
         </table>
     </div>
 </div>
-
-
-
-
-
-<div style="position:absolute;top:50px;left:0px;right:0px;z-index: 999;">
-
-    <!--TAB -->
-    <div style="width: 100%;margin-top: 15px;margin-bottom: 15px;">
-        <table width="100%">
-            <tr>
-                <td align="center"><a href="#/">监护人信息</a></td>
-                <td>|</td>
-                <td align="center" style="color: #38a626;">监护人报告</td>
-            </tr>
-        </table>
-    </div>
-
-    <hr/>
-</div>
-
-<div class="scrollable" style="padding-top: 100px;">
+<div class="scrollable">
 
     <div class="scrollable-content">
+        <div><img src="imgs/logo_report_list.png" width="100%"  /></div>
 
         <div class="list-group">
             <a ng-repeat="report in reports" href="#/detail/{{ report.id }}" class="list-group-item">
-
-                <table height=100%>
+		
+				<table height=100%>
                     <tr>
+                        <td><img src="imgs/report_list_icon.png" width="80px" height="80px"/>&nbsp;&nbsp;</td>
                         <td>
                             <table border=0 height=100%>
                                 <tr>
@@ -70,7 +51,4 @@
 
 </div>
 
-
 	
-
- 

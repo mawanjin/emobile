@@ -23,21 +23,29 @@ app.filter('trustHtml', function ($sce) {
 // 
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'guardian.html', controller:'guardianController', reloadOnSearch: false});
-  $routeProvider.when('/detail/:id',        {templateUrl: 'guardian_detail.html',controller:'detailController', reloadOnSearch: false});
+  $routeProvider.when('/detail/:id',        {templateUrl: 'guardian_report_detail.html',controller:'detailController', reloadOnSearch: false});
   $routeProvider.when('/report',        {templateUrl: 'guardian_report.html',controller:'reportController', reloadOnSearch: false});
   $routeProvider.when('/login',        {templateUrl: 'login.html',controller:'guardianController', reloadOnSearch: false});
 });
 
 app.controller('detailController', function($rootScope, $scope,$http,$routeParams){
-	$http.get('/edu/f/edu/schoolNews/get?id='+$routeParams.id).
-	  success(function(data, status, headers, config) {
-	    $scope.schoolNews = data;
-	    
-  }).
-  error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });
+
+  for(var i=0;i<$rootScope.reports.length;i++){
+    if($rootScope.reports[i].id==$routeParams.id){
+      $scope.report = $rootScope.reports[i];
+      break;
+    }
+  }
+
+	//$http.get('/edu/f/edu/schoolNews/get?id='+$routeParams.id).
+	//  success(function(data, status, headers, config) {
+	//    $scope.schoolNews = data;
+	//
+  //}).
+  //error(function(data, status, headers, config) {
+  //  // called asynchronously if an error occurs
+  //  // or server returns response with an error status.
+  //});
   
   $scope.deliberatelyTrustDangerousSnippet = function() {  
 	return $sce.trustAsHtml($scope.snippet);  
@@ -48,6 +56,7 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
     };
 
 });
+
 
 app.controller('guardianController', function($rootScope, $scope,$http,$location){
   Cookies.json = true;
@@ -145,6 +154,18 @@ app.controller('reportController', function($rootScope, $scope,$http,$location){
     if($scope.guardian == undefined){
       alert('您没有监护人');
       return;
+    }else{
+      //读取报告列表
+
+      $http.get('/edu/f/edu/reportGuardian?uid='+$scope.guardian.id).
+          success(function(data, status, headers, config) {
+            $rootScope.reports = data;
+
+          }).
+          error(function(data, status, headers, config) {
+            alert("获取失败")
+          });
+
     }
   }else{
     $location.path("/login")

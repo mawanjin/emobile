@@ -1,0 +1,54 @@
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        私人定制
+    </div>
+    <div style="position:absolute;height:100%;width: 100%;" ng-click="back()">
+        <table height=100% width="100%">
+            <tr>
+                <td align="left" style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
+                </td>
+                <td width="50%" align="right" style="color:green;">
+                    <div class="btn-group pull-right">
+                        <a href="#/msg" class='btn'>
+                            <div style="border: 1px solid #ffffff;height: 30px;width: 80px;line-height: 30px;color: #ffffff;">
+                                我要定制
+                            </div>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="scrollable">
+
+    <div class="scrollable-content">
+        <div><img src="imgs/logo_customization.png" width="100%"  /></div>
+
+        <div class="list-group">
+            <div ng-repeat="customization in customizations"  class="list-group-item">
+		
+				<table height=100%>
+                    <tr>
+                        <td><img src="{{customization.img}}" width="80px" height="80px"/>&nbsp;&nbsp;</td>
+                        <td>
+                            <table border=0 height=100%>
+                                <tr>
+                                    <!--标题-->
+                                    <td>{{customization.summary }}</td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+	
