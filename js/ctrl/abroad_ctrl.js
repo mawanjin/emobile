@@ -47,13 +47,6 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
     }else{
         $scope.user = undefined;
     }
-
-    //if($cookieStore.get("login")==true){
-    //  $scope.user = $cookieStore.get("user");
-    //}else{
-    //    $scope.user = undefined;
-    //}
-
     //网络请求数据
     var url = "/edu/f/edu/abroad/get?abroadhome="+$routeParams.id;
     if($scope.user != undefined){
