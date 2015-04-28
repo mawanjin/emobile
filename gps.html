@@ -1,0 +1,52 @@
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        GPS
+    </div>
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
+            <tr>
+                <td style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="scrollable">
+
+    <div class="scrollable-content">
+        <div><img src="imgs/logo_gps.png" width="100%"  /></div>
+
+        <div class="list-group">
+            <a ng-repeat="gps in gpses" href="#/detail/{{ gps.id }}" class="list-group-item">
+		
+				<table height=100%>
+                    <tr>
+
+                        <td>
+                            <table border=0 height=100% >
+                                <tr>
+                                    <td height="100%" valign=center style="color: #999;">{{gps.createDate | date:'yyyy-MM-dd
+                                        HH:mm:ss'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height=5px></td>
+                                </tr>
+                                <tr>
+                                    <!--位置-->
+                                    <td>{{gps.location }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+	
