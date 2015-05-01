@@ -99,8 +99,11 @@ app.directive('dragToDismiss', function($drag, $parse, $timeout){
 });
 
 
-app.controller('HomeController', function($rootScope, $scope,$location,$cookieStore){
+app.controller('HomeController', function($rootScope, $scope,$http,$location,$routeParams,$cookieStore){
 
+  $("#tab_index img").attr('src','imgs/index_selected.png');
+  $("#tab_personal img").attr('src','imgs/mine.png');
+  $("#tab_setting img").attr('src','imgs/setting.png');
 
   $("#tab_personal").on('click',function(){
     $("#tab_personal img").attr('src','imgs/mine_selected.png');
@@ -114,84 +117,117 @@ app.controller('HomeController', function($rootScope, $scope,$location,$cookieSt
     $("#tab_index img").attr('src','imgs/index.png');
   });
 
-  $('#owl-demo').owlCarousel({
-    items: 1,
-    autoPlay: true
-  });
 
   //图片点击效果,及跳转事件
   //个人中心
 
-  $("#home_menu_first").on('mousedown',function(){
-    $("#home_menu_first").attr('src','imgs/menu_personal_pressed.png');
+  $("#home_menu_personal").on('touchstart',function(){
+    $("#home_menu_personal").css('background-image','url("imgs/menu_personal_pressed.png")');
   });
 
-  $("#home_menu_first").on('mouseup',function(){
-    $("#home_menu_first").attr('src','imgs/menu_personal.png');
+  $("#home_menu_personal").on('touchend',function(){
+    $("#home_menu_personal").css('background-image','url("imgs/menu_personal.png")');
   });
+
+  $("#home_menu_personal").on('click',function(){
+    window.location.href="#/personal";
+  });
+
+
   //主题活动
-  $("#home_menu_activity").on('mousedown',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity_pressed.png');
+  $("#home_menu_activity").on('touchstart',function(){
+    $("#home_menu_activity").css('background-image','url("imgs/menu_activity_pressed.png")');
   });
 
-  $("#home_menu_activity").on('mouseup',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity.png');
+  $("#home_menu_activity").on('touchend',function(){
+    $("#home_menu_activity").css('background-image','url("imgs/menu_activity.png")');
   });
+
+  $("#home_menu_activity").on('click',function(){
+    window.location.href="activity_main.html";
+  });
+
   //海外之家
-  $("#home_menu_abroad").on('mousedown',function(){
-    $("#home_menu_abroad").attr('src','imgs/menu_aboard_pressed.png');
+  $("#home_menu_aboard").on('touchstart',function(){
+    $("#home_menu_aboard").css('background-image','url("imgs/menu_aboard_pressed.png")');
   });
 
-  $("#home_menu_abroad").on('mouseup',function(){
-    $("#home_menu_abroad").attr('src','imgs/menu_aboard.png');
+  $("#home_menu_aboard").on('touchend',function(){
+    $("#home_menu_aboard").css('background-image','url("imgs/menu_aboard.png")');
   });
-  //名题指导
-  $("#home_menu_teacher").on('mousedown',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher_pressed.png');
+  $("#home_menu_aboard").on('click',function(){
+    window.location.href="abroad_main.html";
+  });
+  //名师指导
+  $("#home_menu_teacher").on('touchstart',function(){
+    $("#home_menu_teacher").css('background-image','url("imgs/menu_teacher_pressed.png")');
   });
 
-  $("#home_menu_teacher").on('mouseup',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher.png');
+  $("#home_menu_teacher").on('touchend',function(){
+    $("#home_menu_teacher").css('background-image','url("imgs/menu_teacher.png")');
   });
+  $("#home_menu_teacher").on('click',function(){
+    window.location.href="teacher_main.html";
+  });
+
   //重要提示
-  $("#home_menu_emergency").on('mousedown',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency_pressed.png');
+  $("#home_menu_emergency").on('touchstart',function(){
+    $("#home_menu_emergency").css('background-image','url("imgs/menu_emergency_pressed.png")');
   });
 
-  $("#home_menu_emergency").on('mouseup',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency.png');
+  $("#home_menu_emergency").on('touchend',function(){
+    $("#home_menu_emergency").css('background-image','url("imgs/menu_emergency.png")');
+  });
+  $("#home_menu_emergency").on('click',function(){
+    window.location.href="emergency_main.html";
   });
   //名校推荐
-  $("#home_menu_school").on('mousedown',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school_pressed.png');
+  $("#home_menu_school").on('touchstart',function(){
+    $("#home_menu_school").css('background-image','url("imgs/menu_school_pressed.png")');
   });
 
-  $("#home_menu_school").on('mouseup',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school.png');
+  $("#home_menu_school").on('touchend',function(){
+    $("#home_menu_school").css('background-image','url("imgs/menu_school.png")');
+  });
+  $("#home_menu_school").on('click',function(){
+    window.location.href="country_main.html";
   });
   //生活便利
-  $("#home_menu_convenience").on('mousedown',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience_pressed.png');
+  $("#home_menu_convenience").on('touchstart',function(){
+    $("#home_menu_convenience").css('background-image','url("imgs/menu_convenience_pressed.png")');
   });
 
-  $("#home_menu_convenience").on('mouseup',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience.png');
+  $("#home_menu_convenience").on('touchend',function(){
+    $("#home_menu_convenience").css('background-image','url("imgs/menu_convenience.png")');
   });
+  $("#home_menu_convenience").on('click',function(){
+    window.location.href="convenience_main.html";
+  });
+
   //gps
-  $("#home_menu_gps").on('mousedown',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps_pressed.png');
+  $("#home_menu_gps").on('touchstart',function(){
+    $("#home_menu_gps").css('background-image','url("imgs/menu_gps_pressed.png")');
   });
 
-  $("#home_menu_gps").on('mouseup',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps.png');
+  $("#home_menu_gps").on('touchend',function(){
+    $("#home_menu_gps").css('background-image','url("imgs/menu_gps.png")');
   });
+
+  $("#home_menu_gps").on('click',function(){
+    window.location.href="gps_main.html";
+  });
+
   //联系我们
-  $("#home_menu_contact").on('mousedown',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us_pressed.png');
+  $("#home_menu_contact").on('touchstart',function(){
+    $("#home_menu_contact").css('background-image','url("imgs/menu_contact_us_pressed.png")');
   });
 
-  $("#home_menu_contact").on('mouseup',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us.png');
+  $("#home_menu_contact").on('touchend',function(){
+    $("#home_menu_contact").css('background-image','url("imgs/menu_contact_us.png")');
+  });
+
+  $("#home_menu_contact").on('click',function(){
+    window.location.href="suggestion_main.html";
   });
 
 });
@@ -202,90 +238,84 @@ app.controller('personalController', function($rootScope, $scope){
   $("#tab_index img").attr('src','imgs/index.png');
   $("#tab_setting img").attr('src','imgs/setting.png');
 
-  $('#owl-demo').owlCarousel({
-    items: 1,
-    autoPlay: true
-  });
-
   //图片点击效果,及跳转事件
-  //个人中心
-
-  $("#home_menu_personal").on('mousedown',function(){
-    $("#home_menu_personal img").attr('src','imgs/menu_personal_pressed.png');
-
+  //就读学校
+  $("#home_menu_schoolNews").on('touchstart',function(){
+    $("#home_menu_schoolNews").css('background-image','url("imgs/myschool_pressed.png")');
   });
 
-  $("#home_menu_first").on('mouseup',function(){
-    $("#home_menu_first").attr('src','imgs/menu_personal.png');
-  });
-  //主题活动
-  $("#home_menu_activity").on('mousedown',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity_pressed.png');
+  $("#home_menu_schoolNews").on('touchend',function(){
+    $("#home_menu_schoolNews").css('background-image','url("imgs/myschool.png")');
   });
 
-  $("#home_menu_activity").on('mouseup',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity.png');
-  });
-  //海外之家
-  $("#home_menu_aboard").on('mousedown',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard_pressed.png');
+  $("#home_menu_schoolNews").on('click',function(){
+    window.location.href="schoolNews_main.html";
   });
 
-  $("#home_menu_aboard").on('mouseup',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard.png');
-  });
-  //名题指导
-  $("#home_menu_teacher").on('mousedown',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher_pressed.png');
+  //监护人
+  $("#home_menu_guardian").on('touchstart',function(){
+    $("#home_menu_guardian").css('background-image','url("imgs/guardian_pressed.png")');
   });
 
-  $("#home_menu_teacher").on('mouseup',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher.png');
-  });
-  //重要提示
-  $("#home_menu_emergency").on('mousedown',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency_pressed.png');
+  $("#home_menu_guardian").on('touchend',function(){
+    $("#home_menu_guardian").css('background-image','url("imgs/guardian.png")');
   });
 
-  $("#home_menu_emergency").on('mouseup',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency.png');
-  });
-  //名校推荐
-  $("#home_menu_school").on('mousedown',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school_pressed.png');
+  $("#home_menu_guardian").on('click',function(){
+    window.location.href="guardian_main.html";
   });
 
-  $("#home_menu_school").on('mouseup',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school.png');
-  });
-  //生活便利
-  $("#home_menu_convenience").on('mousedown',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience_pressed.png');
+  //日常报告
+  $("#home_menu_report").on('touchstart',function(){
+    $("#home_menu_report").css('background-image','url("imgs/report_pressed.png")');
   });
 
-  $("#home_menu_convenience").on('mouseup',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience.png');
-  });
-  //gps
-  $("#home_menu_gps").on('mousedown',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps_pressed.png');
+  $("#home_menu_report").on('touchend',function(){
+    $("#home_menu_report").css('background-image','url("imgs/report.png")');
   });
 
-  $("#home_menu_gps").on('mouseup',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps.png');
-  });
-  //联系我们
-  $("#home_menu_contact").on('mousedown',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us_pressed.png');
+  $("#home_menu_report").on('click',function(){
+    window.location.href="report_main.html";
   });
 
-  $("#home_menu_contact").on('mouseup',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us.png');
+  //私人定制
+  $("#home_menu_customization").on('touchstart',function(){
+    $("#home_menu_customization").css('background-image','url("imgs/customization_pressed.png")');
   });
 
+  $("#home_menu_customization").on('touchend',function(){
+    $("#home_menu_customization").css('background-image','url("imgs/customization.png")');
+  });
 
+  $("#home_menu_customization").on('click',function(){
+    window.location.href="customization_main.html";
+  });
 
+  //知心姐姐
+  $("#home_menu_sister").on('touchstart',function(){
+    $("#home_menu_sister").css('background-image','url("imgs/sister_pressed.png")');
+  });
 
+  $("#home_menu_sister").on('touchend',function(){
+    $("#home_menu_sister").css('background-image','url("imgs/sister.png")');
+  });
+
+  $("#home_menu_sister").on('click',function(){
+    window.location.href="sister_main.html";
+  });
+
+  //咨询回复
+  $("#home_menu_reply").on('touchstart',function(){
+    $("#home_menu_reply").css('background-image','url("imgs/reply_pressed.png")');
+  });
+
+  $("#home_menu_reply").on('touchend',function(){
+    $("#home_menu_reply").css('background-image','url("imgs/reply.png")');
+  });
+
+  $("#home_menu_reply").on('click',function(){
+    window.location.href="sister_main.html";
+  });
 
 });
 
@@ -295,11 +325,6 @@ app.controller('settingController', function($rootScope, $scope,$cookieStore,$lo
   $("#tab_personal img").attr('src','imgs/mine.png');
   $("#tab_index img").attr('src','imgs/index.png');
   $("#tab_setting img").attr('src','imgs/setting_selected.png');
-
-  $('#owl-demo').owlCarousel({
-    items: 1,
-    autoPlay: true
-  });
 
   //图片点击效果,及跳转事件
   //个人中心

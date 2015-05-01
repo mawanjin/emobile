@@ -2,6 +2,11 @@
 height: 25px;
 }
 
+.splash_img{
+    background-image: url("../imgs/splash1.png");
+    background-repeat: no-repeat;
+}
+
 
 #owl-demo { width: 100%;  margin-left: auto; margin-right: auto;}
 #owl-demo .item{ display: block;}

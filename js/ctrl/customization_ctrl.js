@@ -24,10 +24,10 @@ app.filter('trustHtml', function ($sce) {
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'customization.html', controller:'customizationController', reloadOnSearch: false});
   $routeProvider.when('/msg',              {templateUrl: 'customization_msg.html', controller:'msgController', reloadOnSearch: false});
-    $routeProvider.when('/login',        {templateUrl: 'login.html',controller:'msgController', reloadOnSearch: false});
+    $routeProvider.when('/login',        {templateUrl: 'login.html',controller:'customizationController', reloadOnSearch: false});
 });
 
-app.controller('customizationController', function($rootScope, $scope,$http,$routeParams){
+app.controller('customizationController', function($rootScope, $scope,$http,$routeParams,$location){
 
 	$http.get('/edu/f/edu/customization').
 	  success(function(data, status, headers, config) {
@@ -47,39 +47,16 @@ app.controller('customizationController', function($rootScope, $scope,$http,$rou
     	window.history.go(-1);
     };
 
-
-
-});
-
-app.controller('msgController', function($rootScope, $scope,$http,$location){
     Cookies.json = true;
-    if(Cookies.get("login")==true){//进行报名操作
-        $scope.user = Cookies.get("user");
-
-    }else{
-        $location.path("/login")
-    }
-
-    $scope.submitMsg = function(){
-
-        if($scope.content==undefined||$scope.content.trim()==''){
-            alert("内容不能为空");
-            return;
+    $scope.order = function(){
+        if(Cookies.get("login")==true){//进行报名操作
+            $scope.user = Cookies.get("user");
+        }else{
+            $location.path("/login")
         }
-
-        $http.get('/edu/f/edu/customization/msg?uid='+$scope.user.id+'&msg='+$scope.content).
-            success(function(data, status, headers, config) {
-                if(data==true){
-                    alert("提交成功");
-                    window.history.back();
-                }else{
-                    alert("提交失败");
-                }
-            }).
-            error(function(data, status, headers, config) {
-                alert("网络异常");
-            });
     };
+
+
 
     $scope.login = function(){
 
@@ -115,6 +92,35 @@ app.controller('msgController', function($rootScope, $scope,$http,$location){
                 alert("登录失败")
             });
     };
+
+});
+
+app.controller('msgController', function($rootScope, $scope,$http,$location){
+    Cookies.json = true;
+
+
+    $scope.submitMsg = function(){
+
+        if($scope.content==undefined||$scope.content.trim()==''){
+            alert("内容不能为空");
+            return;
+        }
+
+        $http.get('/edu/f/edu/customization/msg?uid='+$scope.user.id+'&msg='+$scope.content).
+            success(function(data, status, headers, config) {
+                if(data==true){
+                    alert("提交成功");
+                    window.history.back();
+                }else{
+                    alert("提交失败");
+                }
+            }).
+            error(function(data, status, headers, config) {
+                alert("网络异常");
+            });
+    };
+
+
 
   $scope.deliberatelyTrustDangerousSnippet = function() {
 	return $sce.trustAsHtml($scope.snippet);
