@@ -26,6 +26,7 @@ app.config(function($routeProvider) {
   $routeProvider.when('/detail/:id',        {templateUrl: 'sister_detail.html',controller:'detailController', reloadOnSearch: false});
   $routeProvider.when('/msg/:id',        {templateUrl: 'sister_msg.html',controller:'msgController', reloadOnSearch: false});
 	$routeProvider.when('/login',        {templateUrl: 'login.html',controller:'detailController', reloadOnSearch: false});
+	$routeProvider.when('/register',        {templateUrl: 'register.html',controller:'detailController', reloadOnSearch: false});
 });
 
 app.controller('sisterController', function($rootScope, $scope,$http){
@@ -88,6 +89,36 @@ app.controller('detailController', function($rootScope, $scope,$http,$routeParam
 			});
 	};
 
+	$scope.register = function(){
+		if($scope.userName == undefined||$scope.userName.trim()==""){
+			alert("请输入用户名");
+			return ;
+		}
+		if($scope.password == undefined||$scope.password.trim()==""){
+			alert("请输入密码");
+			return ;
+		}
+		if($scope.password2 == undefined||$scope.password2.trim()==""||$scope.password!=$scope.password2.trim()){
+			alert("二次输入的密码不一致");
+			return ;
+		}
+		//注册
+		$http.post('/edu/f/edu/account/register?loginName='+$scope.userName+'&password='+$scope.password, {userName:$scope.userName,password:$scope.password}).
+			success(function(data, status, headers, config) {
+				if(data.rs==true){
+					alert("注册成功");
+					window.history.go(-1);
+				}else{
+					alert(data.msg);
+				}
+
+			}).
+			error(function(data, status, headers, config) {
+				alert("注册失败");
+			});
+
+
+	};
   $scope.deliberatelyTrustDangerousSnippet = function() {  
 	return $sce.trustAsHtml($scope.snippet);  
   };  
@@ -119,7 +150,9 @@ app.controller('msgController', function($rootScope, $scope,$http,$location,$rou
 		}
 
 		//提交请求
-		$http.get('/edu/f/edu/sister/msg?sisterId='+$routeParams.id+'&uid='+$scope.user.id+'&title='+$scope.title+'&msg='+$scope.content).
+
+		//$http.get('/edu/f/edu/sister/msg?sisterId='+$routeParams.id+'&uid='+$scope.user.id+'&title='+$scope.title+'&msg='+$scope.content).
+		$http.get('/edu/f/edu/question/save?euser.id='+$scope.user.id+'&msg='+$scope.content+'&title='+$scope.title).
 	  	success(function(data, status, headers, config) {
 			if(data==true){
 				alert('提交成功');

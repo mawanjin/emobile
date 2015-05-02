@@ -239,3 +239,10 @@ h1 {
     background-size:100% 100%;
 }
 
+#gps_logo{
+    background-image: url("../imgs/logo_gps.png");
+    background-repeat: no-repeat;
+    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
+}

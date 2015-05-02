@@ -19,7 +19,9 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/login', {templateUrl: 'login.html', controller: 'loginController', reloadOnSearch: false});
 });
 
-app.controller('gpsController', function ($rootScope, $scope, $http) {
+app.controller('gpsController', function ($rootScope, $scope, $http,$location) {
+
+    //定位当前位置
     Cookies.json = true;
     if (Cookies.get("login") == true) {//进行报名操作
         $scope.user = Cookies.get("user");
@@ -38,6 +40,31 @@ app.controller('gpsController', function ($rootScope, $scope, $http) {
 
     $scope.back = function () {
         window.history.go(-1);
+    };
+
+    //定位
+    $http.get('/edu/f/edu/gps/locate?uid='+$scope.user.id).
+        success(function (data, status, headers, config) {
+            $scope.gpsNow = data;
+        }).
+        error(function (data, status, headers, config) {
+        });
+
+
+    $scope.relocateGps = function(){
+        $("#relocateContainer").html('定位中...');
+        var url = '/edu/f/edu/gps/locate?uid='+$scope.user.id;
+
+        $http.get(url).
+            success(function (data, status, headers, config) {
+                $scope.gpsNow = data;
+                $("#relocateContainer").html('重新定位');
+                alert('定位成功');
+            }).
+            error(function (data, status, headers, config) {
+                $("#relocateContainer").html('重新定位');
+                alert('定位失败');
+            });
     };
 
 });

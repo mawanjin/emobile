@@ -1,0 +1,61 @@
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        咨询回复
+    </div>
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
+            <tr>
+                <td style="color:white;padding-left: 20px;" align="left">
+					<img src="imgs/back.png" class="back_arrow" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<div class="scrollable">
+
+    <div class="scrollable-content">
+        <div><img src="imgs/logo_reply.png" width="100%"  /></div>
+        <div class="list-group">
+            <a ng-repeat="reply in replies" href="#/detail/{{ reply.id }}" class="list-group-item">
+                <span>
+                        <table height=100%>
+                            <tr>
+
+                                <td>
+                                    <table border=0 height=100%>
+                                        <tr>
+                                            <!--标题-->
+                                            <td>{{reply.title }}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td height=5px></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{{reply.summary }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="100%" valign=bottom style="color: #999;">{{reply.createDate | date:'yyyy-MM-dd
+                                                HH:mm:ss'}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+                </span>
+
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+	

@@ -1,54 +1,17 @@
-// 
-// Here is how to define your module 
-// has dependent on mobile-angular-ui
-// 
-
-
-var mApp = angular.module('phonecat', [
-  'ngRoute',
-  'mobile-angular-ui',
-  'phonecatControllers',
-  'phonecatServices',
-
-  // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'
-  // it is at a very beginning stage, so please be careful if you like to use
-  // in production. This is intended to provide a flexible, integrated and and 
-  // easy to use alternative to other 3rd party libs like hammer.js, with the
-  // final pourpose to integrate gestures into default ui interactions like 
-  // opening sidebars, turning switches on/off ..
-  'mobile-angular-ui.gestures'
-]);
-
-mApp.config(function($routeProvider) {
-  $routeProvider.when('/phones',          {templateUrl: 'phone-list.html',controller: 'PhoneListCtrl', reloadOnSearch: false}).
-  when('/phones/:phoneId', {templateUrl: 'phone-detail.html',controller: 'PhoneDetailCtrl'}).
-  otherwise({redirectTo: '/phones'});
-});
-
-
 var app = angular.module('emobile', [
   'ngRoute',
   'mobile-angular-ui',
    'ngCookies',
-  // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'
-  // it is at a very beginning stage, so please be careful if you like to use
-  // in production. This is intended to provide a flexible, integrated and and 
-  // easy to use alternative to other 3rd party libs like hammer.js, with the
-  // final pourpose to integrate gestures into default ui interactions like 
-  // opening sidebars, turning switches on/off ..
   'mobile-angular-ui.gestures',
   'ngCookies'
 ]);
 
-// 
-// You can configure ngRoute as always, but to take advantage of SharedState location
-// feature (i.e. close sidebar on backbutton) you should setup 'reloadOnSearch: false' 
-// in order to avoid unwanted routing.
-// 
 app.config(function($routeProvider) {
   $routeProvider.when('/home',              {templateUrl: 'home.html', controller:'HomeController', reloadOnSearch: false});
   $routeProvider.when('/personal',              {templateUrl: 'personal.html', controller:'personalController', reloadOnSearch: false});
   $routeProvider.when('/setting',              {templateUrl: 'setting.html', controller:'settingController', reloadOnSearch: false});
+  $routeProvider.when('/login',        {templateUrl: 'login.html',controller:'HomeController', reloadOnSearch: false});
+  $routeProvider.when('/register',        {templateUrl: 'register.html',controller:'HomeController', reloadOnSearch: false});
 });
 
 //
@@ -105,10 +68,20 @@ app.controller('HomeController', function($rootScope, $scope,$http,$location,$ro
   $("#tab_personal img").attr('src','imgs/mine.png');
   $("#tab_setting img").attr('src','imgs/setting.png');
 
+
+
   $("#tab_personal").on('click',function(){
     $("#tab_personal img").attr('src','imgs/mine_selected.png');
     $("#tab_index img").attr('src','imgs/index.png');
     $("#tab_setting img").attr('src','imgs/setting.png');
+    Cookies.json = true;
+    //判断是否登录
+    if(Cookies.get("login")==true){//进行报名操作
+      $scope.user = Cookies.get("user");
+      window.location.href="#/personal";
+    }else{//去登录
+      window.location.href="#/login";
+    }
   });
 
   $("#tab_setting").on('click',function(){
@@ -130,7 +103,15 @@ app.controller('HomeController', function($rootScope, $scope,$http,$location,$ro
   });
 
   $("#home_menu_personal").on('click',function(){
-    window.location.href="#/personal";
+    Cookies.json = true;
+    //判断是否登录
+    if(Cookies.get("login")==true){//进行报名操作
+      $scope.user = Cookies.get("user");
+      window.location.href="#/personal";
+    }else{//去登录
+      window.location.href="#/login";
+    }
+
   });
 
 
@@ -230,13 +211,84 @@ app.controller('HomeController', function($rootScope, $scope,$http,$location,$ro
     window.location.href="suggestion_main.html";
   });
 
+  Cookies.json = true;
+  $scope.login = function(){
+
+    if($scope.loginName==undefined || $scope.loginName==""){
+      alert("请输入用户名");
+      return
+    }
+
+    if($scope.password==undefined || $scope.password==""){
+      alert("请输入密码");
+      return
+    }
+
+
+
+    $http.get('/edu/f/edu/account/login?loginName='+$scope.loginName+'&password='+$scope.password).
+        success(function(data, status, headers, config) {
+          $scope.login_rs = data;
+          if($scope.login_rs.rs==true){
+            //存储用户信息
+            Cookies.set('login', true, { path: '/'});
+            Cookies.set('guardian', $scope.login_rs.guardian, { path: '/'});
+            Cookies.set('user', $scope.login_rs.euser, { path: '/'});
+            window.history.back();
+
+          }else{
+            alert("用户名或密码错误");
+            Cookies.put("login",false);
+          }
+
+        }).
+        error(function(data, status, headers, config) {
+          alert("登录失败")
+        });
+  };
+
+  $scope.register = function(){
+    if($scope.userName == undefined||$scope.userName.trim()==""){
+      alert("请输入用户名");
+      return ;
+    }
+    if($scope.password == undefined||$scope.password.trim()==""){
+      alert("请输入密码");
+      return ;
+    }
+    if($scope.password2 == undefined||$scope.password2.trim()==""||$scope.password!=$scope.password2.trim()){
+      alert("二次输入的密码不一致");
+      return ;
+    }
+    //注册
+    $http.post('/edu/f/edu/account/register?loginName='+$scope.userName+'&password='+$scope.password, {userName:$scope.userName,password:$scope.password}).
+        success(function(data, status, headers, config) {
+          if(data.rs==true){
+            alert("注册成功");
+            window.history.go(-1);
+          }else{
+            alert(data.msg);
+          }
+
+        }).
+        error(function(data, status, headers, config) {
+          alert("注册失败");
+        });
+
+
+  };
+
 });
 
-app.controller('personalController', function($rootScope, $scope){
+app.controller('personalController', function($rootScope, $scope,$location){
 
   $("#tab_personal img").attr('src','imgs/mine_selected.png');
   $("#tab_index img").attr('src','imgs/index.png');
   $("#tab_setting img").attr('src','imgs/setting.png');
+
+
+  //判断是否已经登录,如果没有登录，则进行登录操作。
+
 
   //图片点击效果,及跳转事件
   //就读学校
@@ -314,7 +366,7 @@ app.controller('personalController', function($rootScope, $scope){
   });
 
   $("#home_menu_reply").on('click',function(){
-    window.location.href="sister_main.html";
+    window.location.href="reply_main.html";
   });
 
 });
@@ -325,82 +377,6 @@ app.controller('settingController', function($rootScope, $scope,$cookieStore,$lo
   $("#tab_personal img").attr('src','imgs/mine.png');
   $("#tab_index img").attr('src','imgs/index.png');
   $("#tab_setting img").attr('src','imgs/setting_selected.png');
-
-  //图片点击效果,及跳转事件
-  //个人中心
-
-  $("#home_menu_personal").on('mousedown',function(){
-    $("#home_menu_personal img").attr('src','imgs/menu_personal_pressed.png');
-
-  });
-
-  $("#home_menu_first").on('mouseup',function(){
-    $("#home_menu_first").attr('src','imgs/menu_personal.png');
-  });
-  //主题活动
-  $("#home_menu_activity").on('mousedown',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity_pressed.png');
-  });
-
-  $("#home_menu_activity").on('mouseup',function(){
-    $("#home_menu_activity").attr('src','imgs/menu_activity.png');
-  });
-  //海外之家
-  $("#home_menu_aboard").on('mousedown',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard_pressed.png');
-  });
-
-  $("#home_menu_aboard").on('mouseup',function(){
-    $("#home_menu_aboard").attr('src','imgs/menu_aboard.png');
-  });
-  //名题指导
-  $("#home_menu_teacher").on('mousedown',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher_pressed.png');
-  });
-
-  $("#home_menu_teacher").on('mouseup',function(){
-    $("#home_menu_teacher").attr('src','imgs/menu_teacher.png');
-  });
-  //重要提示
-  $("#home_menu_emergency").on('mousedown',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency_pressed.png');
-  });
-
-  $("#home_menu_emergency").on('mouseup',function(){
-    $("#home_menu_emergency").attr('src','imgs/menu_emergency.png');
-  });
-  //名校推荐
-  $("#home_menu_school").on('mousedown',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school_pressed.png');
-  });
-
-  $("#home_menu_school").on('mouseup',function(){
-    $("#home_menu_school").attr('src','imgs/menu_school.png');
-  });
-  //生活便利
-  $("#home_menu_convenience").on('mousedown',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience_pressed.png');
-  });
-
-  $("#home_menu_convenience").on('mouseup',function(){
-    $("#home_menu_convenience").attr('src','imgs/menu_convenience.png');
-  });
-  //gps
-  $("#home_menu_gps").on('mousedown',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps_pressed.png');
-  });
-
-  $("#home_menu_gps").on('mouseup',function(){
-    $("#home_menu_gps").attr('src','imgs/menu_gps.png');
-  });
-  //联系我们
-  $("#home_menu_contact").on('mousedown',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us_pressed.png');
-  });
-
-  $("#home_menu_contact").on('mouseup',function(){
-    $("#home_menu_contact").attr('src','imgs/menu_contact_us.png');
-  });
 
 
   $scope.logout = function(){

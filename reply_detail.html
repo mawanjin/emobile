@@ -1,0 +1,44 @@
+<div class="navbar navbar-app navbar-absolute-top edu_title">
+    <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
+        详情
+    </div>
+    <div style="position:absolute;height:100%;width:100%">
+        <table height=100% width="100%">
+            <tr>
+                <td style="color:white;padding-left: 10px;" align="left" ng-click="back()">
+                    <img src="imgs/back.png" class="back_arrow"/>
+                </td>
+
+                <td width="50%" align="right" style="color:green;">
+                    <div class="btn-group pull-right">
+                        <a href="#/msg" class='btn'>
+                            <div style="border: 1px solid #ffffff;height: 30px;width: 80px;line-height: 30px;color: #ffffff;">
+                                继续提问
+                            </div>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--内容-->
+<div style="position:absolute;top:60px;left:10px;right:10px;">
+    <!--标题-->
+    <div style="font-size:18px;">{{reply.title}}</div>
+    <!--时间-->
+    <div style="color:gray;">{{reply.createDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+    <div><hr/></div>
+    <!--内容-->
+    <div>{{reply.msg}}</div>
+    <div><hr/></div>
+    <!--回复-->
+    <div style="color: #999;">回复:</div>
+    <article ng-bind-html="reply.reply | trustHtml"></article>
+</div>
+	
+	
+
+ 

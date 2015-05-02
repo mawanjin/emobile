@@ -1,28 +1,61 @@
-<div class="navbar navbar-app navbar-absolute-top edu_title">
+<div class="navbar navbar-app navbar-absolute-top edu_title" style="background-color: transparent;border-bottom: transparent;">
     <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
         GPS
     </div>
-    <div style="position:absolute;height:100%;" ng-click="back()">
-        <table height=100%>
+    <div style="position:absolute;width: 100%;height:100%;" >
+        <table width="100%" height=100%>
             <tr>
-                <td style="color:white;padding-left: 20px;" >
+                <td style="color:white;padding-left: 15px;" align="left" ng-click="back()" >
                     <img src="imgs/back.png" class="back_arrow" />
+                </td>
+                <td width="50%" align="right" style="color:green;">
+                    <div class="btn-group pull-right">
+                        <div class='btn' ng-click="relocateGps()">
+                            <div id="relocateContainer" style="border: 1px solid #ffffff;height: 30px;width: 80px;line-height: 30px;color: #ffffff;">
+                                重新定位
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </table>
     </div>
 </div>
-<div class="scrollable">
+
+<div style="position: absolute;top:0px;width: 100%;height: 300px;"><img src="imgs/logo_gps.png" width="100%" height="300px"  /></div>
+
+<div class="scrollable" style="position: absolute;top:300px;">
 
     <div class="scrollable-content">
-        <div><img src="imgs/logo_gps.png" width="100%"  /></div>
+
 
         <div class="list-group">
-            <a ng-repeat="gps in gpses" href="#/detail/{{ gps.id }}" class="list-group-item">
+
+            <!--当前位置-->
+            <table width="100%" height="40px" style="background-color: #f7f7f7;padding-top:5px;padding-bottom: 5px;" >
+                <tr>
+                    <td valign="middle" style="padding-left: 10px;">
+                        <img src="imgs/gps_map.png" />&nbsp;<font color="#666" style="padding-left: 10px;">当前位置</font>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="height: 40px;line-height: 40px;padding-left: 10px;" >
+                {{gpsNow }}
+            </div>
+
+            <!--历史位置-->
+            <table width="100%" height="40px" style="background-color: #f7f7f7;padding-top:5px;padding-bottom: 5px;" >
+                <tr>
+                    <td valign="middle" style="padding-left: 10px;">
+                        <img src="imgs/gps_history.png" /><font color="#666" style="padding-left: 15px;">历史位置</font>
+                    </td>
+                </tr>
+            </table>
+            <lable ng-repeat="gps in gpses"  class="list-group-item">
 		
 				<table height=100%>
                     <tr>
-
                         <td>
                             <table border=0 height=100% >
                                 <tr>
@@ -42,7 +75,7 @@
                     </tr>
                 </table>
 
-            </a>
+            </lable>
         </div>
     </div>
 
