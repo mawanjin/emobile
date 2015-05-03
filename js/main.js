@@ -14,53 +14,6 @@ app.config(function($routeProvider) {
   $routeProvider.when('/register',        {templateUrl: 'register.html',controller:'HomeController', reloadOnSearch: false});
 });
 
-//
-// `$drag` example: drag to dismiss
-//
-app.directive('dragToDismiss', function($drag, $parse, $timeout){
-  return {
-    restrict: 'A',
-    compile: function(elem, attrs) {
-      var dismissFn = $parse(attrs.dragToDismiss);
-      return function(scope, elem, attrs){
-        var dismiss = false;
-
-        $drag.bind(elem, {
-          constraint: {
-            minX: 0, 
-            minY: 0, 
-            maxY: 0 
-          },
-          move: function(c) {
-            if( c.left >= c.width / 4) {
-              dismiss = true;
-              elem.addClass('dismiss');
-            } else {
-              dismiss = false;
-              elem.removeClass('dismiss');
-            }
-          },
-          cancel: function(){
-            elem.removeClass('dismiss');
-          },
-          end: function(c, undo, reset) {
-            if (dismiss) {
-              elem.addClass('dismitted');
-              $timeout(function() { 
-                scope.$apply(function() {
-                  dismissFn(scope);  
-                });
-              }, 400);
-            } else {
-              reset();
-            }
-          }
-        });
-      };
-    }
-  };
-});
-
 
 app.controller('HomeController', function($rootScope, $scope,$http,$location,$routeParams,$cookieStore){
 
@@ -68,7 +21,9 @@ app.controller('HomeController', function($rootScope, $scope,$http,$location,$ro
   $("#tab_personal img").attr('src','imgs/mine.png');
   $("#tab_setting img").attr('src','imgs/setting.png');
 
-
+  $scope.back = function(){
+    window.history.go(-1);
+  };
 
   $("#tab_personal").on('click',function(){
     $("#tab_personal img").attr('src','imgs/mine_selected.png');
@@ -195,7 +150,16 @@ app.controller('HomeController', function($rootScope, $scope,$http,$location,$ro
   });
 
   $("#home_menu_gps").on('click',function(){
-    window.location.href="gps_main.html";
+
+    Cookies.json = true;
+    //判断是否登录
+    if(Cookies.get("login")==true){//进行报名操作
+      $scope.user = Cookies.get("user");
+      window.location.href="gps_main.html";
+    }else{//去登录
+      window.location.href="#/login";
+    }
+
   });
 
   //联系我们
@@ -288,7 +252,6 @@ app.controller('personalController', function($rootScope, $scope,$location){
 
 
   //判断是否已经登录,如果没有登录，则进行登录操作。
-
 
   //图片点击效果,及跳转事件
   //就读学校
@@ -421,14 +384,14 @@ app.controller('MainController', function($rootScope, $scope,$http){
   // User agent displayed in home page
   $scope.userAgent = navigator.userAgent;
   
-  // Needed for the loading screen
-  $rootScope.$on('$routeChangeStart', function(){
-    $rootScope.loading = true;
-  });
-
-  $rootScope.$on('$routeChangeSuccess', function(){
-    $rootScope.loading = false;
-  });
+  //// Needed for the loading screen
+  //$rootScope.$on('$routeChangeStart', function(){
+  //  $rootScope.loading = true;
+  //});
+  //
+  //$rootScope.$on('$routeChangeSuccess', function(){
+  //  $rootScope.loading = false;
+  //});
 
   // Fake text i used here and there.
   $scope.lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo, aliquid eaque soluta nihil eligendi adipisci error, illum corrupti nam fuga omnis quod quaerat mollitia expedita impedit dolores ipsam. Obcaecati.';

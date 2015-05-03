@@ -3,9 +3,14 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/imgs/aboutus.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/back.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/customization.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/customization_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/guardian.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/guardian_pressed.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_female.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_important.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_male.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/loading.gif" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_abroad.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_activity.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_convenience.png" charset="UTF-8" />
@@ -24,9 +29,17 @@
     <file url="file://$PROJECT_DIR$/imgs/logo_teacher_detail.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logout.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/menu_aboard.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/myschool.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/myschool_pressed.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/nan.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/nv.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/reply.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/reply_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/report.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/report_list_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/report_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/sister.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/sister_pressed.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/angular-cookies.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/js.cookie.js" charset="UTF-8" />
   </component>

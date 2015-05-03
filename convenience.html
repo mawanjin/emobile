@@ -5,7 +5,7 @@
     <div style="position:absolute;height:100%;" ng-click="back()">
         <table height=100%>
             <tr>
-                <td style="color:white;padding-left: 20px;" align="left">
+                <td style="color:white;padding-left: 15px;" align="left">
 					<img src="imgs/back.png" class="back_arrow" />
                 </td>
             </tr>
@@ -14,11 +14,12 @@
 
 </div>
 
+<div style="position: absolute;top: 0px;width: 100%;"><img src="imgs/logo_convenience.png" width="100%" height="200px;"  /></div>
 
-<div class="scrollable">
+<div class="scrollable" style="position: absolute;padding-top: 200px;">
 
     <div class="scrollable-content">
-        <div><img src="imgs/logo_convenience.png" width="100%"  /></div>
+
         <div class="list-group">
             <a ng-repeat="convenience in conveniences" href="#/detail/{{ convenience.id }}" class="list-group-item">
 		

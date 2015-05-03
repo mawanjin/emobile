@@ -2,20 +2,22 @@
     <div class="navbar-brand navbar-brand-center" style="width:100%;text-align:center;">
         知心姐姐
     </div>
-    <div style="position:absolute;height:100%;width:100%">
-        <table height=100% width="100%">
+    <div style="position:absolute;height:100%;" ng-click="back()">
+        <table height=100%>
             <tr>
-                <td style="color:white;padding-left: 20px;" ng-click="back()" align="left" ><img src="imgs/back.png" class="back_arrow" /></td>
+                <td style="color:white;padding-left: 20px;" >
+                    <img src="imgs/back.png" class="back_arrow" />
+                </td>
             </tr>
         </table>
     </div>
 </div>
-<div class="scrollable" style="top:50px;">
+<div class="scrollable" style="position: absolute;padding-top:50px;">
 
     <div class="scrollable-content">
         <div class="list-group">
             <a ng-repeat="sister in sisters" href="#/detail/{{ sister.id }}" class="list-group-item">
-					
+
 			<span >
 				<table height=100%>
                     <tr>
