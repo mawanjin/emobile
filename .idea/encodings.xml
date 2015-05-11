@@ -2,45 +2,150 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/imgs/aboutus.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/aboutus.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/add_account.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/add_password.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/back.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/back.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/customization.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/customization.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/customization_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/customization_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/fullimage1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/fullimage2.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/fullimage3.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/fullimage4.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/fullimage5.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/gps_history.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/gps_map.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/guardian.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/guardian.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/guardian_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/guardian_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/home_bg.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/home_img1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_female.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_female.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_important.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_important.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/icon_male.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/icon_male.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/index.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/index_selected.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/loading.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/loading.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/login_top.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_abroad.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_abroad.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_activity.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_activity.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_convenience.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_convenience.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_customization.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_customization.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_emergency.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_emergency.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_gps.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_guardian.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_guardian.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_personal.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_personal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_reply.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_reply.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_report_list.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_report_list.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_report_month.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_report_month.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_report_semester.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_report_semester.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_report_week.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_report_week.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_report_year.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_report_year.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_schoolNew.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_schoolNew.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_setting.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_setting.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_setting.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_suggestion_family.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_suggestion_family.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_suggestion_guardian.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_suggestion_school.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_suggestion_service.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logo_teacher_detail.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logo_teacher_detail.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/logout.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/logout.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/menu_aboard.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_aboard.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_aboard_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_activity.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_activity_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_contact_us.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_contact_us_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_convenience.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_convenience_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_emergency.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_emergency_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_gps.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_gps_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_personal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_personal_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_school.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_school_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_teacher.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/menu_teacher_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/mine.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/mine_selected.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/myschool.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/myschool.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/myschool_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/myschool_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/nan.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/nan.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/nv.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/nv.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/reply.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/reply.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/reply_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/reply_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/report.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/report.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/report_list_icon.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/report_list_icon.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/report_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/report_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/setting.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/setting_selected.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/sister.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/sister.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/imgs/sister_pressed.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/imgs/sister_pressed.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/angular-cookies.min.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/js.cookie.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logo.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logo_setting.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logo_suggestion_family.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logo_suggestion_service.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logo_teacher_detail.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logout.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_aboard.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_aboard_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_activity.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_activity_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_contact_us.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_contact_us.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_contact_us_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_convenience.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_convenience_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_convenience_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_emergency.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_emergency_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_gps.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_gps_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_personal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_personal_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu_school_pressed.png" charset="UTF-8" />
   </component>
 </project>
